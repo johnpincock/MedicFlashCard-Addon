@@ -12,7 +12,8 @@ def newunloadCollection(onsuccess):
 		uunloadCollection()
 		if onsuccess:
 			onsuccess()
-	mw.closeAllWindows(callback)
+	# mw.closeAllWindows(callback)
+	callback()
 	mw.app.exit(0)
 
 def uunloadCollection():

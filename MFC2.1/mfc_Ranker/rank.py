@@ -327,7 +327,7 @@ def mySetupButtons(self, _old):
 	num = round(rank[0])
 	alabel = str(int(num))
 
-	strr ="<div style='float:right; padding-bottom:5px;top:10px; right:70px; position:fixed;'>Rank:%s</div>" % alabel
+	strr ="<div style='float:right; padding-bottom:5px;top:10px; right:10px; position:fixed;'>Rank:%s</div>" % alabel
 	button = strr + ret
 	return button
 
