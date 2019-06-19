@@ -436,7 +436,7 @@ class FlashCardWindow(QWidget):
 		syncMedia()
 
 	def downloadBut(self):
-		self.label_results.setText("We've downloded your online collection. \n Restart Anki to view new decks.")
+		self.label_results.setText("We've started downloading your online collection. \n A pop up will appear for you to restart Anki and View changes")
 		downloadFromMFC()
 
 	def uploadBut(self):
@@ -660,7 +660,8 @@ def reloadcollection():
 
 @pyqtSlot()
 def uploadToMFC():
-	mw._unloadCollection()
+
+	mw.unloadCollection(donothing)
 	mw.progress.start(label="Uploading to medicflashcards.com....\n Please don't close Anki \n (This can take up to 30 seconds!)", immediate=True)
 	worker = ProcessRunnable(target=uploading)
 	worker.signals.finished.connect(reloadcollection)
